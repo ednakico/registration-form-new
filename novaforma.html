@@ -41,8 +41,8 @@
             <li><label for="code">Code:</label></li>
             <li><input id="codeinput" type="text" placeholder="xx-xx-xxx "name="code" size="20" required></li>
             <br>
-            <span id='codemsg' style="color:red; display:none">Not a valid code. Please follow the pattern.</span>
-
+            <!-- <span id='codemsg' style="color:red; display:none">Not a valid code. Please follow the pattern.</span> -->
+            <span class="alert alert-danger d-none" id="codemsg" role="alert">Not a valid code. Please follow the pattern.</span>
             <li><label for="country">Country:</label></li>
             <li><select name="country">
               <option selected="" value="Default">(Please select a country)</option>
@@ -68,8 +68,8 @@
             <li><input type="radio" id="m"name="gen" value="Male" /><span>Male</span></li>
             <li><input type="radio" id="f" name="gen" value="Female" /><span>Female</span></li>
             <li><input type="radio" id="o"name="gen" value="Other" /><span>Other</span></li>
-            <span id='gendermsg' style="color:red; display:none"> You must select your preferred gender to continue.</span>
-
+            <!-- <span id='gendermsg' style="color:red; display:none"> You must select your preferred gender to continue.</span> -->
+            <span class="alert alert-danger d-none" id="gendermsg" role="alert">You must select your preferred gender to continue.</span>
             <li><label>Interests:</label></li>
             <li><input type="checkbox" name="mo" value="mo" /><span>Movies</span></li>
             <li><input type="checkbox" name="mu" value="mu" /><span>Music</span></li>
@@ -97,6 +97,7 @@
       event.preventDefault();
 
       // regex za pattern - prima 2 broja - 2 broja - tri broja
+      // validacija se provjerava tek kada se klikne na submit
       const codeRegex=/^[0-9]{2}-[0-9]{2}-[0-9]{3}$/ 
       const code=document.getElementById('codeinput').value;
 
